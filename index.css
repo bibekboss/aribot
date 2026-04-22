@@ -1,0 +1,229 @@
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+/* CENTER THE FORM ON ALL DEVICES */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #fdfdfe; /* keep your theme */
+}
+
+/* MAIN PAGE BUTTON (Sign Up / Logout) */
+.login-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.buttom {
+    padding: 10px 20px;
+    background: #6a00ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.buttom:hover {
+    background: #5200cc;
+    transform: scale(1.05);
+}
+
+/* LOGIN / REGISTER FORM CONTAINER */
+.form {
+    width: 100%;
+    max-width: 420px;
+    padding: 40px;
+    margin: 80px auto;
+    background: radial-gradient(circle, rgba(26,131,176,0.9) 10%, #041521 80%);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+    backdrop-filter: blur(25px);
+    box-shadow: 0 0 25px rgba(0,0,0,0.4), 0 0 35px rgba(0,150,255,0.3);
+    animation: fadeUp 0.7s ease-out;
+    position: relative;
+}
+
+/* TITLE */
+.board h2 {
+    font-size: 2.2em;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 10px;
+    text-shadow: 0 0 12px #00aaff;
+}
+
+/* INPUT BOX */
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 55px;
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+    margin: 25px 0;
+    transition: 0.3s ease;
+}
+
+.input-box:hover {
+    border-color: #00aaff;
+    box-shadow: 0 4px 12px rgba(0,170,255,0.3);
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #fff;
+    padding: 0 40px 0 10px;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #ccc;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+.input-box input:focus ~ label,
+.input-box input:not(:placeholder-shown) ~ label {
+    top: -8px;
+    font-size: 0.85em;
+    color: #00aaff;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 10px;
+    font-size: 1.3em;
+    color: #00aaff;
+    line-height: 55px;
+}
+
+/* FORM BUTTON */
+.btn {
+    margin-top: 10px;
+    width: 100%;
+    height: 48px;
+    background: linear-gradient(135deg, #00aaff, #0066ff);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 0 18px rgba(0,150,255,0.5);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(0,150,255,0.8);
+}
+
+/* LINKS */
+.remember-forgot,
+.login-register {
+    margin-top: 10px;
+    color: #ccc;
+}
+
+.login-register a,
+.remember-forgot a {
+    color: #00aaff;
+    text-decoration: none;
+}
+
+.login-register a:hover {
+    text-decoration: underline;
+}
+
+/* FULL MOBILE RESPONSIVENESS */
+@media (max-width: 600px){
+
+    /* Main container */
+    .form {
+        width: 92%;
+        padding: 25px;
+        margin: 40px auto;
+        border-radius: 16px;
+    }
+
+    /* Title */
+    .board h2 {
+        font-size: 1.7em;
+        margin-bottom: 5px;
+    }
+
+    /* Input box */
+    .input-box {
+        height: 50px;
+        margin: 18px 0;
+    }
+
+    .input-box input {
+        font-size: 0.95em;
+        padding: 0 35px 0 10px;
+    }
+
+    .input-box label {
+        font-size: 0.9em;
+    }
+
+    .input-box .icon {
+        font-size: 1.1em;
+        right: 8px;
+        line-height: 50px;
+    }
+
+    /* Button */
+    .btn {
+        height: 45px;
+        font-size: 1em;
+        border-radius: 6px;
+    }
+
+    /* Remember / Forgot */
+    .remember-forgot {
+        font-size: 0.85em;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+    }
+
+    /* Register link */
+    .login-register {
+        font-size: 0.9em;
+        text-align: center;
+    }
+
+    /* Top-right login button */
+    .login-btn {
+        top: 10px;
+        right: 10px;
+    }
+
+    .buttom {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+
+/* ANIMATION */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR and AR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="xwrapper">
+        <div class="header">
+            <div class="logo">
+                <img src="images/ar-logo.png" alt="">
+                <h1>Aribot</h1>
+            </div>
+            <div class="search">
+                <input type="search" placeholder="Search here....">
+            </div>
+            <div class="media">
+               <span class="link"><a href="#"></a><img src="images/instagram.png" width="40px" height="40px"></span>
+                <span class="link"><a href="#"></a><img src="images/linkedin1.png" width="40px" height="40px"></span>
+                 <span class="link"><a href="#"></a><img src="images/telegram.png" width="40px" height="40px"></span>
+                  <span class="link"><a href="#"></a><img src="images/whatsapp.png" width="70px" height="70px"></span>
+            </div>
+            <div class="login-btn">
+               <button id="authBtn" class="buttom">login</button>
+            </div>
+        </div>
+         <div class="container">
+                <nav>
+                    <a class="nav-item" href="index.html">Home</a>
+                    <a class="nav-item" href="research.html">research</a>
+                    <a class="nav-item" href="latest.html">Latest News</a>
+                    <a class="nav-item" href="updated.html">Updated</a>
+                    <a class="nav-item" href="popular.html">Popular</a>
+                    <a class="nav-item" href="contact.html">Contact us</a>
+                </nav>
+            </div>
+      
+         <section>
+            <div class="board">
+                <h1>what if we can Add AR with AI </h1>
+               <div class="re-board">
+    <h2>
+        What Happens When You Add an AI Agent to AR Technology
+    </h2><br>
+    <p>
+       <strong> When Augmented Reality (AR) technology is combined with an AI agent, the glasses 
+        transform from simple digital displays into smart, context-aware assistants that 
+        understand your surroundings and respond instantly. Together, AR + AI blend:</strong>
+        <br><br>
+        > Real-time AR overlays that react to your environment <br>
+        > AI-powered object and text recognition <br>
+        > Intelligent guidance and step-by-step visual instructions <br>
+        > Voice-controlled assistance and hands-free interaction <br>
+        > Personalized insights based on what you see and do <br><br>
+
+        This integration allows the glasses to not only show digital content but also 
+        understand it. The AI agent analyzes your surroundings, identifies objects, 
+        translates text, highlights important details, and provides helpful information 
+        directly in your field of view.
+    </p>
+    <br><br>
+
+    <p>
+       <strong> AR + AI glasses create a seamless blend of digital intelligence and real-world 
+        awareness. Here's what becomes possible:</strong>
+        <br><br>
+
+        > The AI sees what you see through built-in sensors and cameras <br>
+        > It recognizes tools, products, faces, signs, and environments instantly <br>
+        > AR overlays appear exactly where you need them in real space <br>
+        > The AI guides you through tasks with arrows, highlights, and animations <br>
+        > You can ask questions naturally, like “What is this?” or “What do I do next” <br>
+        > The glasses warn you about hazards, mistakes, or missing steps <br>
+        > AI summarizes what you're looking at and provides quick explanations <br><br>
+
+        With AR + AI integration, the glasses become a real-time expert, translator, 
+        navigator, and personal assistant — all inside a lightweight pair of smart 
+        eyewear. This combination changes how people work, learn, explore, and interact 
+        with the world around them.
+    </p>
+</div>
+    <div class="re-board">
+        <h2>Do you want more explanations about AR and Ai:</h2>
+        <strong><a href="updated.html">Click here</a></strong>
+    </div>
+
+            </div>
+         </section>
+
+
+     <section style="display: flex; clear: both;">
+       <div class="foot">
+        
+        <div class="link-box">
+          <a href="research.html">👉 History of Augmented Reality from 1800s to present</a>
+          <a href="todays.html">👉 whats AR looks like Todays</a>
+          <a href="arai.html">👉 what if we can add AI Agent with AR</a>
+          <a href="#">👉 Understanding AR Through the Lens of AI</a>
+          <a href="#">👉 The Fusion of AR Vision and AI Intelligence</a>
+          <a href="#">👉 AI-Enhanced Augmented Reality Explained Simply</a>
+          <a href="#">👉 When AR Meets AI: A Smarter Digital World</a>
+          <a href="#">👉 Augmented Reality Powered by Intelligent AI</a>
+        </div>
+        <div class="link-box">
+           <div class="link-icon">
+                <a href="#"><img src="images/instagram.png" width="40px" height="40px"></a>
+                <a href="#"><img src="images/linkedin1.png" width="40px" height="40px"></a>
+                <a href="#"><img src="images/youtube-icon.svg" width="40px" height="40px"></a>
+                <a href="#"><img src="images/telegram.png" width="40px" height="40px"></a>
+                <a href="#"><img src="images/whatsapp.png" style=" width: 70px; height: 70px; margin-top: -12px;"></a>
+            </div>
+           <form>
+                <textarea id="comment" name="comment" rows="6" cols="50" placeholder="write your comments here...." maxlength="200"></textarea><br><br>
+                <input type="submit" value="submit" class="buttom">
+           </form>
+        </div>     
+       </div>
+     </section>
+    <section>
+        <div class="footer">
+            <h1>@ All copyright -> Bibek Mahato</h1>
+        </div>
+    </section>
+
+
+
+
+    </div>
+     <!-- JAVASCRIPT -->
+   <script>
+  const authBtn = document.getElementById("authBtn");
+
+  function updateAuthButton() {
+    const loggedIn = localStorage.getItem("loggedIn");
+
+    if (loggedIn) {
+      authBtn.textContent = "Logout";
+    } else {
+      authBtn.textContent = "Login";
+    }
+  }
+
+  authBtn.addEventListener("click", () => {
+    const loggedIn = localStorage.getItem("loggedIn");
+
+    if (loggedIn) {
+      // Logout
+      localStorage.removeItem("loggedIn");
+      alert("Logged out successfully");
+      updateAuthButton();
+    } else {
+      // Go to login page
+      window.location.href = "login.html";
+    }
+  });
+
+  updateAuthButton();
+</script>
+
+</body>
+</html>

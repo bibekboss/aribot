@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" >
+</head>
+<body>
+     <!--login popup-->
+        <div class="form" id="loginForm">
+       
+         <div class="board login">
+             <h2>Login</h2>
+             <!--  <span class="cancels"><i class="fa-solid fa-delete-left"></i></span>-->
+
+            <form action="#">
+                <div class="input-box">
+                    <div class="icon">
+                      <i class="fa-regular fa-envelope"></i>
+                    </div>
+                     <input type="email" id="email" name="email" placeholder=" " required>
+                     <label for="email">Email</label>
+                </div>
+                <div class="input-box">
+                  <div class="icon"><i class="fa-solid fa-lock"></i></div>
+                  <input type="password" id="password" name="password" placeholder=" " required>
+                  <label for="password">Password</label>
+               </div>
+               <div class="remember-forgot">
+                  <label><input type="checkbox">Remember me</label>
+                   <a href="#">forgot password?</a>
+                </div>
+                 <button type="submit" class="btn">login</button>
+                  <div class="login-register">
+                   <p>Don't have an account <a href="register.html" class="register-link">Register</a></p>
+                  </div>
+            </form>
+          </div>
+       </div>
+     <script>
+  document.getElementById("loginForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const pass = document.getElementById("password").value;
+
+    const savedEmail = localStorage.getItem("user");
+    const savedPass = localStorage.getItem("pass");
+
+    if (email === savedEmail && pass === savedPass) {
+      localStorage.setItem("loggedIn", "true");
+      alert("Login successful!");
+      window.location.href = "index.html";
+    } else {
+      alert("Incorrect email or password");
+    }
+  });
+</script>
+
+</body>
+</html>

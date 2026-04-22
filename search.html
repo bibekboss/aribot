@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<h2>Search Results</h2>
+<div id="results"></div>
+
+<script>
+const query = localStorage.getItem("searchQuery");
+const resultsDiv = document.getElementById("results");
+
+if (!query) {
+    resultsDiv.innerHTML = "<p>No search term found.</p>";
+} else {
+    // Simple keyword-based search
+    const pages = [
+        { title: "Home", url: "home.html", keywords: "robot robotics ai introduction" },
+        { title: "Research", url: "research.html", keywords: "research future ai machine learning" },
+        { title: "Text Page", url: "text.html", keywords: "text information robotics details" }
+    ];
+
+    let found = pages.filter(p => p.keywords.includes(query));
+
+    if (found.length === 0) {
+        resultsDiv.innerHTML = `<p>No results found for "<strong>${query}</strong>"</p>`;
+    } else {
+        resultsDiv.innerHTML = `<p>Results for "<strong>${query}</strong>":</p>`;
+        found.forEach(p => {
+            resultsDiv.innerHTML += `
+                <div class="result-item">
+                    <a href="${p.url}">${p.title}</a>
+                </div>
+            `;
+        });
+    }
+}
+</script>
+
+</body>
+</html>

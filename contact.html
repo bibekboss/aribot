@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AR and AR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="xwrapper">
+        <div class="header">
+            <div class="logo">
+                <img src="images/ar-logo.png" alt="">
+                <h1>Aribot</h1>
+            </div>
+            <div class="search">
+                <input type="search" placeholder="Search here....">
+            </div>
+            <div class="media">
+               <span class="link"><a href="#"></a><img src="images/instagram.png" width="40px" height="40px"></span>
+                <span class="link"><a href="#"></a><img src="images/linkedin1.png" width="40px" height="40px"></span>
+                 <span class="link"><a href="#"></a><img src="images/telegram.png" width="40px" height="40px"></span>
+                  <span class="link"><a href="#"></a><img src="images/whatsapp.png" width="70px" height="70px"></span>
+            </div>
+            <div class="login-btn">
+               <button id="authBtn" class="buttom">login</button>
+            </div>
+        </div>
+         <div class="container">
+                <nav>
+                    <a class="nav-item" href="index.html">Home</a>
+                    <a class="nav-item" href="research.html">research</a>
+                    <a class="nav-item" href="latest.html">Latest News</a>
+                    <a class="nav-item" href="updated.html">Updated</a>
+                    <a class="nav-item" href="popular.html">Popular</a>
+                    <a class="nav-item" href="contact.html">Contact us</a>
+                </nav>
+            </div>
+      
+         <section>
+            <div class="contact">
+                <div class="xcontainer">
+                     <h1>Contact Us</h1>
+                     </div>
+    
+
+   <div class="xform">
+    <p>We'd love to hear from you. Reach out with questions, feedback, or partnership ideas.</p>
+     <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <select>
+        <option value="">Select Inquiry Type</option>
+        <option value="technical">Technical Support</option>
+        <option value="business">Business Inquiry</option>
+        <option value="feedback">General Feedback</option>
+      </select>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+   </div>
+    <div class="info">
+      <p><strong>Email:</strong> support@aribot.com</p>
+      <p><strong>Phone:</strong> +44 20 1234 5678</p>
+      <p><strong>Location:</strong> London, UK</p>
+      <p><strong>Hours:</strong> Mon-Fri, 9am-6pm GMT</p>
+    </div>
+ </div>
+  </section>
+
+
+     <section>
+        <div class="footer">
+            <h1>@ All copyright -> Bibek Mahato</h1>
+        </div>
+    </section>
+
+
+
+
+    </div>
+     <!-- JAVASCRIPT -->
+   <script>
+  const authBtn = document.getElementById("authBtn");
+
+  function updateAuthButton() {
+    const loggedIn = localStorage.getItem("loggedIn");
+
+    if (loggedIn) {
+      authBtn.textContent = "Logout";
+    } else {
+      authBtn.textContent = "Login";
+    }
+  }
+
+  authBtn.addEventListener("click", () => {
+    const loggedIn = localStorage.getItem("loggedIn");
+
+    if (loggedIn) {
+      // Logout
+      localStorage.removeItem("loggedIn");
+      alert("Logged out successfully");
+      updateAuthButton();
+    } else {
+      // Go to login page
+      window.location.href = "login.html";
+    }
+  });
+
+  updateAuthButton();
+</script>
+
+</body>
+</html>
